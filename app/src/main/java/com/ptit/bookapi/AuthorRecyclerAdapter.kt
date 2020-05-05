@@ -19,7 +19,7 @@ class AuthorRecyclerAdapter(private val context: Context, private val authors: M
     private val layoutInflater = LayoutInflater.from(context)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AuthorRecyclerAdapter.ViewHolder {
-        val itemView = layoutInflater.inflate(R.layout.item_book_list, parent, false)
+        val itemView = layoutInflater.inflate(R.layout.item_author_list, parent, false)
         return ViewHolder(itemView)
     }
 

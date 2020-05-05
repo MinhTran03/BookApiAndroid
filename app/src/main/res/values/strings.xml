@@ -26,5 +26,12 @@
 
     <string name="hint_author_name">Nhập tên tác giả</string>
     <string name="hint_author_address">Nhập địa chỉ</string>
+    <string name="title_activity_main">Sách API</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_book">Book</string>
+    <string name="menu_author">Author</string>
 
 </resources>
