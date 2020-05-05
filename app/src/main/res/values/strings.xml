@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Book Api</string>
+    <string name="title_activity_book_list">Danh sách sách</string>
+    <string name="title_activity_book">Thông tin sách</string>
+
+    <string name="hintBookName">Nhập tên sách</string>
+    <string name="hintBookCost">Nhập giá bán</string>
+    <string name="hintBookRetail">Nhập giá bán lẻ</string>
+    <string name="imageBookDescription">Book Description</string>
+    <string name="hintPubDate">Chọn ngày phát hành</string>
+    <string name="buttonSelectDate">CHỌN NGÀY</string>
+    <string name="buttonLoadImage">TẢI ẢNH</string>
+    <string name="textViewImageUrl">Nhập URL cho image mới</string>
+    <string name="imageButtonDeleteBookDescription">Xóa sách này</string>
+
+    <string name="menuItemReload">Reload</string>
+    <string name="menuItemSave">Lưu</string>
+    <string name="hintCategory">Danh mục sách</string>
+    <string name="hintAuthor">Danh sách tác giả</string>
+    <string name="hintPublisher">Nhà phát hành</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="title_nav_book_list">Sách</string>
+    <string name="title_nav_author_list">Tác giả</string>
+    <string name="title_nav_book_category">Danh mục</string>
+
+</resources>

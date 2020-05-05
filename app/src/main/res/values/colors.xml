@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorDarkGray">#0D0D0D</color>
+    <color name="colorBlackPearl">#1E272C</color>
+    <color name="colorDarkModeMessenger">#202124</color>
+    <color name="colorSubtitleLight">#A5A8AF</color>
+
+    <color name="colorToolBar">@color/colorDarkModeMessenger</color>
+    <color name="colorFabButton">@color/colorDarkModeMessenger</color>
+
+    <color name="colorMainBlack">#000000</color>
+    <color name="colorMainWhite">#FFFFFF</color>
+    <color name="colorGitHubWhite">#F9F9F9</color>
+
+    <color name="colorTikiPriceRed">#FF3425</color>
+</resources>

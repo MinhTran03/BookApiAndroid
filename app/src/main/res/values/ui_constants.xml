@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="book_grid_span">2</integer>
+
+    <string name="empty_book_url_message">Vui lòng nhập đường dẫn ảnh</string>
+    <string name="empty_book_name_message">Vui lòng nhập tên sách</string>
+    <string name="empty_book_cost_message">Vui lòng nhập giá tiền</string>
+    <string name="empty_book_retail_message">Vui lòng nhập giá bán lẻ</string>
+    <string name="empty_book_category_message">Vui lòng chọn danh mục</string>
+    <string name="empty_book_author_message">Vui lòng chọn tác giả</string>
+    <string name="empty_book_publisher_message">Vui lòng chọn nhà phát hành</string>
+</resources>

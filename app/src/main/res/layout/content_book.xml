@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <ImageView
+        android:id="@+id/imageViewBook"
+        android:layout_width="@dimen/book_image_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/imageBookDescription"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_add_image" />
+
+    <EditText
+        android:id="@+id/editTextBookName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/hintBookName"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textAppearance="@style/EditTextBase"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageViewBook"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBook" />
+
+    <EditText
+        android:id="@+id/editTextBookRetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/hintBookRetail"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textAppearance="@style/EditTextBase"
+        app:layout_constraintEnd_toEndOf="@+id/editTextBookCost"
+        app:layout_constraintStart_toStartOf="@+id/editTextBookCost"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBookCost" />
+
+    <EditText
+        android:id="@+id/editTextBookCost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="@string/hintBookCost"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textAppearance="@style/EditTextBase"
+        app:layout_constraintEnd_toEndOf="@+id/editTextBookName"
+        app:layout_constraintStart_toStartOf="@+id/editTextBookName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBookName" />
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="@string/hintPubDate"
+        android:textAppearance="@style/TextViewBase"
+        android:textColor="@color/colorDarkModeMessenger"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonSelectDate"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSelectDate"
+        app:layout_constraintStart_toStartOf="@+id/editTextBookRetail" />
+
+    <Button
+        android:id="@+id/buttonSelectDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/buttonSelectDate"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextBookRetail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBookRetail" />
+
+    <EditText
+        android:id="@+id/editTextImageUrl"
+        android:inputType="text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="@string/textViewImageUrl"
+        android:textAppearance="@style/EditTextBase"
+        app:layout_constraintEnd_toEndOf="@+id/editTextBookName"
+        app:layout_constraintStart_toEndOf="@+id/imageViewBook"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBook"
+        tools:ignore="TextFields"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/buttonChangeImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/buttonLoadImage"
+        app:layout_constraintStart_toStartOf="@+id/editTextImageUrl"
+        app:layout_constraintTop_toBottomOf="@+id/editTextImageUrl" />
+
+    <EditText
+        android:id="@+id/editTextBookCategory"
+        android:hint="@string/hintCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/textViewDate"
+        app:layout_constraintEnd_toEndOf="@id/buttonSelectDate"
+        app:layout_constraintTop_toBottomOf="@id/buttonSelectDate"
+        android:textAppearance="@style/EditTextBase"
+        android:clickable="false"
+        android:focusable="false"
+        android:inputType="none"
+        android:layout_marginTop="8dp"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/editTextBookAuthor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/editTextBookCategory"
+        app:layout_constraintEnd_toEndOf="@id/editTextBookCategory"
+        app:layout_constraintTop_toBottomOf="@id/editTextBookCategory"
+        android:hint="@string/hintAuthor"
+        android:textAppearance="@style/EditTextBase"
+        android:clickable="false"
+        android:focusable="false"
+        android:inputType="none"
+        android:layout_marginTop="8dp"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/editTextBookPublisher"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/editTextBookAuthor"
+        app:layout_constraintEnd_toEndOf="@id/editTextBookAuthor"
+        app:layout_constraintTop_toBottomOf="@id/editTextBookAuthor"
+        android:hint="@string/hintPublisher"
+        android:textAppearance="@style/EditTextBase"
+        android:clickable="false"
+        android:focusable="false"
+        android:inputType="none"
+        android:layout_marginTop="8dp"
+        android:importantForAutofill="no" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
