@@ -5,6 +5,6 @@
     <item
         android:id="@+id/action_reload"
         android:icon="@drawable/ic_refresh_white_24dp"
-        android:title="@string/menuItemReload"
+        android:title="@string/menu_item_reload"
         app:showAsAction="always" />
 </menu>

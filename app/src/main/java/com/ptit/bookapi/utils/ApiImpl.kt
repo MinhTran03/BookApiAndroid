@@ -1,9 +1,7 @@
 package com.ptit.bookapi.utils
 
-import com.google.gson.GsonBuilder
 import com.ptit.bookapi.models.*
 import kotlinx.coroutines.runBlocking
-import okhttp3.ResponseBody
 
 object ApiImpl {
     private val apiService: ApiService = ApiService()
@@ -29,7 +27,7 @@ object ApiImpl {
         apiService.bookCategoryListAsync().await()
     }
 
-    fun authorListAsync(): List<Author> = runBlocking {
+    fun authorListAsync(): MutableList<Author> = runBlocking {
         apiService.authorListAsync().await()
     }
 

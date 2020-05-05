@@ -4,6 +4,6 @@
 
     <item
         android:id="@+id/action_save_book"
-        android:title="@string/menuItemSave"
+        android:title="@string/menu_item_save"
         app:showAsAction="always" />
 </menu>

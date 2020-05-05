@@ -34,7 +34,7 @@ class BookListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_list)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbarBookList)
 
         fab.setOnClickListener {
             val intent = Intent(this, BookActivity::class.java)
@@ -45,7 +45,7 @@ class BookListActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_list_book, menu)
+        menuInflater.inflate(R.menu.menu_list, menu)
         return true
     }
 

@@ -43,7 +43,7 @@ interface ApiService {
     fun bookCategoryListAsync(): Deferred<List<BookCategory>>
 
     @GET(GET_BOOK_AUTHOR_LIST)
-    fun authorListAsync(): Deferred<List<Author>>
+    fun authorListAsync(): Deferred<MutableList<Author>>
 
     @GET(GET_BOOK_PUBLISHER_LIST)
     fun publisherListAsync(): Deferred<List<Publisher>>

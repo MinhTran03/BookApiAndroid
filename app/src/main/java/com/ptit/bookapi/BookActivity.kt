@@ -50,7 +50,7 @@ class BookActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(toolbarBookDetail)
 
         setEvents()
         setupPopupWindows()

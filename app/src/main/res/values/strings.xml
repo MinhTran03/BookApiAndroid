@@ -3,25 +3,28 @@
     <string name="title_activity_book_list">Danh sách sách</string>
     <string name="title_activity_book">Thông tin sách</string>
 
-    <string name="hintBookName">Nhập tên sách</string>
-    <string name="hintBookCost">Nhập giá bán</string>
-    <string name="hintBookRetail">Nhập giá bán lẻ</string>
-    <string name="imageBookDescription">Book Description</string>
-    <string name="hintPubDate">Chọn ngày phát hành</string>
-    <string name="buttonSelectDate">CHỌN NGÀY</string>
-    <string name="buttonLoadImage">TẢI ẢNH</string>
-    <string name="textViewImageUrl">Nhập URL cho image mới</string>
-    <string name="imageButtonDeleteBookDescription">Xóa sách này</string>
+    <string name="hint_book_name">Nhập tên sách</string>
+    <string name="hint_book_cost">Nhập giá bán</string>
+    <string name="hint_book_retail">Nhập giá bán lẻ</string>
+    <string name="image_book_description">Book Description</string>
+    <string name="hint_pub_date">Chọn ngày phát hành</string>
+    <string name="button_select_date">CHỌN NGÀY</string>
+    <string name="button_load_image">TẢI ẢNH</string>
+    <string name="text_view_image_url">Nhập URL cho image mới</string>
+    <string name="image_button_delete_book_description">Xóa sách này</string>
 
-    <string name="menuItemReload">Reload</string>
-    <string name="menuItemSave">Lưu</string>
-    <string name="hintCategory">Danh mục sách</string>
-    <string name="hintAuthor">Danh sách tác giả</string>
-    <string name="hintPublisher">Nhà phát hành</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="menu_item_reload">Reload</string>
+    <string name="menu_item_save">Lưu</string>
+    <string name="hint_category">Danh mục sách</string>
+    <string name="hint_author">Danh sách tác giả</string>
+    <string name="hint_publisher">Nhà phát hành</string>
 
     <string name="title_nav_book_list">Sách</string>
     <string name="title_nav_author_list">Tác giả</string>
     <string name="title_nav_book_category">Danh mục</string>
+    <string name="title_activity_author_list">AuthorListActivity</string>
+
+    <string name="hint_author_name">Nhập tên tác giả</string>
+    <string name="hint_author_address">Nhập địa chỉ</string>
 
 </resources>
