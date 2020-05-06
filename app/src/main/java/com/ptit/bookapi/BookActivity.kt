@@ -13,10 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.ptit.bookapi.models.BookToPost
 import com.ptit.bookapi.models.BookToPut
-import com.ptit.bookapi.utils.ApiImpl
-import com.ptit.bookapi.utils.BOOK_ID
-import com.ptit.bookapi.utils.Helper
-import com.ptit.bookapi.utils.NOT_A_ID
+import com.ptit.bookapi.utils.*
 import kotlinx.android.synthetic.main.activity_book.*
 import kotlinx.android.synthetic.main.content_book.*
 import kotlinx.coroutines.GlobalScope
@@ -133,7 +130,8 @@ class BookActivity : AppCompatActivity(), View.OnClickListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.action_save -> {
-                val responseState: Boolean? = if(bookId != NOT_A_ID){
+                val customResponse =
+                if(bookId != NOT_A_ID){
                     Log.d(TAG, "Update book ${editTextBookName.text}")
                     uploadEditedBook()
                 }else{
@@ -141,12 +139,11 @@ class BookActivity : AppCompatActivity(), View.OnClickListener {
                     uploadNewBook()
                 }
 
-                if(responseState == true){
+                if(customResponse?.success == true){
                     Snackbar.make(findViewById(android.R.id.content),
                         "Đã lưu thông tin sách", Snackbar.LENGTH_LONG).show()
-                }else{
-                    Snackbar.make(findViewById(android.R.id.content),
-                        "Lỗi lưu sách", Snackbar.LENGTH_LONG).show()
+                }else if(customResponse?.success == false){
+                    Helper.showCustomResponseError(this, customResponse)
                 }
                 true
             }
@@ -154,7 +151,7 @@ class BookActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun uploadNewBook(): Boolean? {
+    private fun uploadNewBook(): CustomResponse? {
         if(!validateForm()) return null
 
         val bookToUpload = BookToPost(
@@ -171,7 +168,7 @@ class BookActivity : AppCompatActivity(), View.OnClickListener {
         return ApiImpl.bookPost(bookToUpload)
     }
 
-    private fun uploadEditedBook(): Boolean? {
+    private fun uploadEditedBook(): CustomResponse? {
         if(!validateForm()) return null
 
         val bookToUpload = BookToPut(

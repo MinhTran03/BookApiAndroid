@@ -7,9 +7,10 @@
     <color name="colorBlackPearl">#1E272C</color>
     <color name="colorDarkModeMessenger">#202124</color>
     <color name="colorSubtitleLight">#A5A8AF</color>
+    <color name="colorBluePearl">#00214f</color>
 
-    <color name="colorToolBar">@color/colorDarkModeMessenger</color>
-    <color name="colorFabButton">@color/colorDarkModeMessenger</color>
+    <color name="colorToolBar">@color/colorBluePearl</color>
+    <color name="colorFabButton">@color/colorBluePearl</color>
 
     <color name="colorMainBlack">#000000</color>
     <color name="colorMainWhite">#FFFFFF</color>

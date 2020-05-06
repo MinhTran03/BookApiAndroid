@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Book Api</string>
-    <string name="title_activity_book_list">Danh sách sách</string>
     <string name="title_activity_book">Thông tin sách</string>
     <string name="title_activity_author">Thông tin tác giả</string>
 
@@ -28,12 +27,12 @@
     <string name="hint_author_name">Nhập tên tác giả</string>
     <string name="hint_author_address">Nhập địa chỉ</string>
     <string name="title_activity_main">Sách API</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Minh Trần</string>
+    <string name="nav_header_subtitle">trancongminh503@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
-    <string name="menu_book">Book</string>
-    <string name="menu_author">Author</string>
+    <string name="menu_book">Danh sách sách</string>
+    <string name="menu_author">Danh sách tác giả</string>
 
     <string name="text_view_author_name">Tên tác giả:</string>
     <string name="text_view_author_address">Địa chỉ:</string>

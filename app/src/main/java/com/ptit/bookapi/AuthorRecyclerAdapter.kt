@@ -7,12 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.ptit.bookapi.models.Author
 import com.ptit.bookapi.utils.AUTHOR_ID
 import com.ptit.bookapi.utils.ApiImpl
+import com.ptit.bookapi.utils.Helper
 import com.ptit.bookapi.utils.NOT_A_ID
 
 class AuthorRecyclerAdapter(private val context: Context, private val authors: MutableList<Author>) :
@@ -37,14 +39,14 @@ class AuthorRecyclerAdapter(private val context: Context, private val authors: M
         holder.authorId = author.iD
 
         holder.buttonDeleteAuthor.setOnClickListener { v: View ->
-            if(ApiImpl.authorDeleteAsync(author.iD)) {
+            val customResponse = ApiImpl.authorDeleteAsync(author.iD)
+            if(customResponse.success) {
                 authors.removeAll { b -> b.iD == author.iD }
 
                 Snackbar.make(v, "Xóa thành công tác giả [${author.fullName}]",
                     Snackbar.LENGTH_LONG).show()
             }else{
-                Snackbar.make(v, "Tác giả [${author.fullName}] không tồn tại",
-                    Snackbar.LENGTH_LONG).show()
+                Helper.showCustomResponseError(context, customResponse)
             }
             notifyDataSetChanged()
         }

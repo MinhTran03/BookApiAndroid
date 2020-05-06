@@ -98,6 +98,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
         drawer_layout.closeDrawer(GravityCompat.START)
+        reloadData()
         return true
     }
 
@@ -115,7 +116,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         Log.d(TAG, "displayBooks call")
         listItems.layoutManager = bookLayoutManager
         listItems.adapter = bookRecyclerAdapter
-
+        supportActionBar?.title = resources.getString(R.string.menu_book)
         nav_view.menu.findItem(R.id.nav_book_list).isChecked = true
     }
 
@@ -123,7 +124,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         Log.d(TAG, "displayAuthors call")
         listItems.layoutManager = authorLayoutManager
         listItems.adapter = authorRecyclerAdapter
-
+        supportActionBar?.title = resources.getString(R.string.menu_author)
         nav_view.menu.findItem(R.id.nav_author_list).isChecked = true
     }
 
@@ -142,14 +143,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         updateListData()
 
+        authorRecyclerAdapter.notifyDataSetChanged()
+        bookRecyclerAdapter.notifyDataSetChanged()
         listItems.adapter?.notifyDataSetChanged()
     }
 
     override fun onResume() {
         super.onResume()
-
         updateListData()
-
-        listItems.adapter?.notifyDataSetChanged()
     }
 }

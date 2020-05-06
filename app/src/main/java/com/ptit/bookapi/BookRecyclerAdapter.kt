@@ -44,14 +44,15 @@ class BookRecyclerAdapter(private val context: Context, private val books: Mutab
         )
 
         holder.buttonDeleteBook.setOnClickListener { v: View ->
-            if(ApiImpl.bookDeleteAsync(book.iD)) {
+            val customResponse = ApiImpl.bookDeleteAsync(book.iD)
+
+            if(customResponse.success) {
                 books.removeAll { b -> b.iD == book.iD }
 
                 Snackbar.make(v, "Xóa thành công sách [${book.name}]",
                     Snackbar.LENGTH_LONG).show()
             }else{
-                Snackbar.make(v, "Sách [${book.name}] không tồn tại",
-                    Snackbar.LENGTH_LONG).show()
+                Helper.showCustomResponseError(context, customResponse)
             }
             notifyDataSetChanged()
         }

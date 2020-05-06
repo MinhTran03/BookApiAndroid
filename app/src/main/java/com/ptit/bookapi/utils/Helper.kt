@@ -5,6 +5,7 @@ import android.app.DatePickerDialog
 import android.content.Context
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.ptit.bookapi.R
@@ -17,6 +18,15 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 object Helper {
+    fun showCustomResponseError(context: Context, customResponse: CustomResponse){
+        val dialog = AlertDialog.Builder(context)
+        dialog.setCancelable(true)
+        dialog.setTitle("Error ${customResponse.code}")
+        dialog.setMessage(customResponse.responseBody?.string())
+        dialog.setNegativeButton("OK") { dialogInterface, _ -> dialogInterface.cancel() }
+        dialog.show()
+    }
+
     fun formatStringToDateTimeForPost(dateTime: String): String {
         val inFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")
         val outFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss")

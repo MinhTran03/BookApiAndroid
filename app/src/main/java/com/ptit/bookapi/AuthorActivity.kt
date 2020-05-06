@@ -7,9 +7,7 @@ import android.view.MenuItem
 import android.widget.EditText
 import com.google.android.material.snackbar.Snackbar
 import com.ptit.bookapi.models.Author
-import com.ptit.bookapi.utils.AUTHOR_ID
-import com.ptit.bookapi.utils.ApiImpl
-import com.ptit.bookapi.utils.NOT_A_ID
+import com.ptit.bookapi.utils.*
 import kotlinx.android.synthetic.main.activity_author.*
 import kotlinx.android.synthetic.main.content_author.*
 import kotlinx.coroutines.GlobalScope
@@ -56,14 +54,13 @@ class AuthorActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
             R.id.action_save -> {
-                val responseState: Boolean? = uploadAuthor()
+                val customResponse: CustomResponse? = uploadAuthor()
 
-                if(responseState == true){
+                if(customResponse?.success == true){
                     Snackbar.make(findViewById(android.R.id.content),
                         "Đã lưu thông tin tác giả", Snackbar.LENGTH_LONG).show()
-                }else{
-                    Snackbar.make(findViewById(android.R.id.content),
-                        "Lỗi lưu tác giả", Snackbar.LENGTH_LONG).show()
+                }else if(customResponse?.success == false){
+                    Helper.showCustomResponseError(this, customResponse)
                 }
                 true
             }
@@ -71,7 +68,7 @@ class AuthorActivity : AppCompatActivity() {
         }
     }
 
-    private fun uploadAuthor(): Boolean? {
+    private fun uploadAuthor(): CustomResponse? {
         if(!validateForm()) return null
 
         val author = Author(
