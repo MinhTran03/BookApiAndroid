@@ -9,4 +9,7 @@
     <string name="empty_book_category_message">Vui lòng chọn danh mục</string>
     <string name="empty_book_author_message">Vui lòng chọn tác giả</string>
     <string name="empty_book_publisher_message">Vui lòng chọn nhà phát hành</string>
+
+    <string name="empty_author_name">Vui lòng nhập tên tác giả</string>
+    <string name="empty_author_address">Vui lòng nhập địa chỉ tác giả</string>
 </resources>

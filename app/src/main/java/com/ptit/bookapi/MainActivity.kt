@@ -58,6 +58,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val intent = Intent(this, BookActivity::class.java)
                 startActivity(intent)
             }else {
+                val intent = Intent(this, AuthorActivity::class.java)
+                startActivity(intent)
             }
         }
 

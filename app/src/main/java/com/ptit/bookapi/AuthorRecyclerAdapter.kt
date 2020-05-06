@@ -8,8 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import com.ptit.bookapi.models.Author
 import com.ptit.bookapi.utils.AUTHOR_ID
+import com.ptit.bookapi.utils.ApiImpl
 import com.ptit.bookapi.utils.NOT_A_ID
 
 class AuthorRecyclerAdapter(private val context: Context, private val authors: MutableList<Author>) :
@@ -32,17 +35,31 @@ class AuthorRecyclerAdapter(private val context: Context, private val authors: M
         holder.authorName.text = author.fullName
         holder.authorAddress.text = author.address
         holder.authorId = author.iD
+
+        holder.buttonDeleteAuthor.setOnClickListener { v: View ->
+            if(ApiImpl.authorDeleteAsync(author.iD)) {
+                authors.removeAll { b -> b.iD == author.iD }
+
+                Snackbar.make(v, "Xóa thành công tác giả [${author.fullName}]",
+                    Snackbar.LENGTH_LONG).show()
+            }else{
+                Snackbar.make(v, "Tác giả [${author.fullName}] không tồn tại",
+                    Snackbar.LENGTH_LONG).show()
+            }
+            notifyDataSetChanged()
+        }
     }
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val authorName: TextView = itemView.findViewById(R.id.textViewAuthorName)
         val authorAddress: TextView = itemView.findViewById(R.id.textViewAuthorAddress)
+        val buttonDeleteAuthor: FloatingActionButton = itemView.findViewById(R.id.fabButtonDeleteAuthor)
 
         var authorId = NOT_A_ID
 
         init{
             itemView.setOnClickListener{
-                val intent = Intent(context, BookActivity::class.java)
+                val intent = Intent(context, AuthorActivity::class.java)
                 intent.putExtra(AUTHOR_ID, authorId)
                 context.startActivity(intent)
             }

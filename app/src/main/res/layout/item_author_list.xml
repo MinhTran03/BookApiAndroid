@@ -11,10 +11,26 @@
     android:paddingEnd="10dp"
     android:paddingBottom="5dp">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabButtonDeleteAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@color/colorGitHubWhite"
+        app:backgroundTint="@color/colorTikiPriceRed"
+        app:fabSize="mini"
+        app:maxImageSize="24dp"
+        app:srcCompat="@drawable/ic_clear_black_24dp"
+        tools:ignore="PrivateResource" />
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
         app:cardBackgroundColor="#FFEFC8"
         app:cardCornerRadius="4dp">
 
@@ -32,6 +48,7 @@
                 android:layout_marginEnd="8dp"
                 android:text="@string/hint_author_name"
                 android:textAppearance="@style/TextViewBase"
+                android:textColor="@color/colorFabButton"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -44,6 +61,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="@string/hint_author_address"
                 android:textAppearance="@style/TextViewBase"
+                android:textColor="@color/colorFabButton"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textViewAuthorName"
                 app:layout_constraintStart_toStartOf="@+id/textViewAuthorName"

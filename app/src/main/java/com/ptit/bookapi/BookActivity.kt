@@ -126,13 +126,13 @@ class BookActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_book, menu)
+        menuInflater.inflate(R.menu.menu_item_detail, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId) {
-            R.id.action_save_book -> {
+            R.id.action_save -> {
                 val responseState: Boolean? = if(bookId != NOT_A_ID){
                     Log.d(TAG, "Update book ${editTextBookName.text}")
                     uploadEditedBook()

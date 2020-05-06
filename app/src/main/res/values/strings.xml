@@ -2,6 +2,7 @@
     <string name="app_name">Book Api</string>
     <string name="title_activity_book_list">Danh sách sách</string>
     <string name="title_activity_book">Thông tin sách</string>
+    <string name="title_activity_author">Thông tin tác giả</string>
 
     <string name="hint_book_name">Nhập tên sách</string>
     <string name="hint_book_cost">Nhập giá bán</string>
@@ -33,5 +34,8 @@
 
     <string name="menu_book">Book</string>
     <string name="menu_author">Author</string>
+
+    <string name="text_view_author_name">Tên tác giả:</string>
+    <string name="text_view_author_address">Địa chỉ:</string>
 
 </resources>

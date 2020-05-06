@@ -22,7 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".AuthorActivity"
+            android:label="@string/title_activity_author"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".BookActivity"
             android:label="@string/title_activity_book"
