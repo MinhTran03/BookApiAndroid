@@ -76,6 +76,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navView.setNavigationItemSelectedListener(this)
 
         displayBooks()
+
+        refreshLayout.setOnRefreshListener {
+            reloadData()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -139,6 +143,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     private fun reloadData(){
+        refreshLayout.isRefreshing = true
         Log.d(TAG, "reloadData call")
 
         updateListData()
@@ -146,6 +151,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         authorRecyclerAdapter.notifyDataSetChanged()
         bookRecyclerAdapter.notifyDataSetChanged()
         listItems.adapter?.notifyDataSetChanged()
+        refreshLayout.isRefreshing = false
     }
 
     override fun onResume() {
