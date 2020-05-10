@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
-const val BASE_URL = "https://bookapiptit.azurewebsites.net/api/"
+const val BASE_URL = "https://webapiptit.azurewebsites.net/api/"
 
 const val GET_BOOK_LIST: String = "books/getall"
 const val GET_BOOK_DETAIL: String = "books/getbyid/{book_id}"
